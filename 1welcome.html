@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/hacker-hoodie-dark-theme-cybersecurity-vulnerabilitygenerative-ai_723895-2776.jpg'); /* Replace 'your-image-url.jpg' with the actual image path or URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .heading {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate, slideIn 1s ease-out;
+        }
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #0ff;
+            }
+            100% {
+                text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .container {
+            width: 320px;
+            padding: 20px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7); 
+            border: 1px solid #0ff;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #0ff;
+            animation: formFadeIn 1.5s ease-in-out;
+        }
+        @keyframes formFadeIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .error {
+            color: #ff4c4c;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            margin: 8px 0;
+            border: 1px solid #0ff;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #0ff;
+            box-shadow: 0 0 10px #0ff;
+            transition: all 0.3s ease-in-out;
+            font-family: 'Orbitron', sans-serif;
+             }
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px #0ff, 0 0 25px #0ff;
+            outline: none;
+            border-color: #0ff;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #0ff;
+            color: #000;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        input[type=submit]:hover {
+            background-color: #00cccc;
+            box-shadow: 0 0 15px #00cccc, 0 0 25px #00cccc;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var errorMsg = document.getElementById("errorMsg");
+
+            if (password.length < 8) 
+            {
+                errorMsg.innerHTML = "Password must be at least 8 characters.";
+                return false;
+            }
+            window.location.href = "2home page.html";
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="heading">
+        <h1>Welcome to Ayush's website</h1>
+        <h3>Please login</h3>
+    </div>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form onsubmit="return validateForm()">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <div id="errorMsg" class="error"></div>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+</body>
+</html>

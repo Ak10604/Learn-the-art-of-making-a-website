@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online HTML, CSS & JavaScript Runner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #c5c6c7;
+            background-color: #1f2833;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #66fcf1;
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #66fcf1;
+            margin-bottom: 20px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        h3 {
+            color: #45a29e;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 150px;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #1f2833;
+            color: #c5c6c7;
+            font-family: monospace;
+            font-size: 14px;
+            resize: none;
+            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.1);
+            transition: border 0.3s;
+        }
+
+        textarea:focus {
+            border: 1px solid #66fcf1;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        #output {
+            width: 90%;
+            border: 1px solid #ccc;
+            background-color: #1f2833;
+            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.1);
+            margin-top: 20px;
+            border-radius: 5px;
+            color: #c5c6c7;
+            overflow: auto;
+            transition: height 0.3s ease;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #66fcf1, 0 0 20px #66fcf1;
+            }
+            100% {
+                text-shadow: 0 0 20px #45a29e, 0 0 30px #45a29e;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="/2home page.html" target="_self">Home</a>
+        <a href="/3 htmllearn.html" target="_self">HTML</a>
+        <a href="/4 css page.html" target="_self">CSS</a>
+        <a href="/5 js.html" target="_self">JavaScript</a>
+    </div>
+
+    <h1>Run Your HTML, CSS & JavaScript Code</h1>
+    <h4>Try running your codes and learn more by practice </h4>
+
+    <h3>HTML Code:</h3>
+    <textarea id="htmlCode" placeholder="Write your HTML code here..."></textarea>
+    
+    <h3>CSS Code:</h3>
+    <textarea id="cssCode" placeholder="Write your CSS code here..."></textarea>
+    
+    <h3>JavaScript Code:</h3>
+    <textarea id="jsCode" placeholder="Write your JavaScript code here..."></textarea>
+    
+    <button onclick="runCode()">Run Code</button>
+
+    <h3>Output:</h3>
+    <iframe id="output" sandbox="allow-scripts"></iframe>
+
+    <script>
+        function runCode() {
+            var htmlCode = document.getElementById("htmlCode").value;
+            var cssCode = document.getElementById("cssCode").value;
+            var jsCode = document.getElementById("jsCode").value;
+            var iframe = document.getElementById('output');
+            
+            // Combine HTML, CSS, and JavaScript
+            var combinedCode = `
+            <style>${cssCode}</style>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+            `;
+            
+            // Set the iframe's content
+            iframe.srcdoc = combinedCode;
+
+            // Resize the iframe
+            iframe.onload = function() {
+                resizeIframe(iframe);
+            };
+        }
+
+        function resizeIframe(iframe) {
+            iframe.style.height = 'auto'; // Reset height to auto for accurate scrollHeight
+            iframe.style.height = (iframe.contentWindow.document.body.scrollHeight + 20) + 'px'; // Set height based on content
+        }
+    </script>
+
+</body>
+</html>

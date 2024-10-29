@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML - Futuristic Style</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #1f2833;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            border-bottom: 3px solid #66fcf1;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #66fcf1;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #66fcf1;
+            color: #0b0c10;
+            transform: translateY(-3px);
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f2833;
+            color: #66fcf1;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        section {
+            margin: 20px 0;
+            background-color: #1f2833;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h1, h2, h3 {
+            color: #66fcf1;
+        }
+
+        code {
+            background-color: #0b0c10;
+            color: #45a29e;
+            padding: 4px 6px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.1);
+        }
+
+        a {
+            color: #66fcf1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #45a29e;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            background-color: #1f2833;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            color: #66fcf1;
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        ol li, ul li {
+            margin-bottom: 10px;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px #66fcf1, 0 0 20px #66fcf1;
+            }
+            100% {
+                box-shadow: 0 0 20px #45a29e, 0 0 30px #45a29e;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/2home page.html">Home</a>
+        <a href="/compiler.html">Compiler</a>
+        <a href="/4 css page.html">CSS</a>
+        <a href="/5 js.html">JS</a>
+    </div>
+
+    <header>
+        <h1>Welcome to Learning HTML</h1>
+        <p>HTML is the structure of a web page. Let's learn the basics!</p>
+    </header>
+
+    <section>
+        <h2>Headings</h2>
+        <p>Headings are used to define titles on a web page. They range from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> in an decreasing order of size.</p>
+        <h1>This is an H1 Heading</h1>
+        <h2>This is an H2 Heading</h2>
+        <h3>This is an H3 Heading</h3>
+    </section>
+
+    <section>
+        <h2>Paragraphs</h2>
+        <p>This is an example of a paragraph. Paragraphs are defined using the <code>&lt;p&gt;</code> tag.</p>
+    </section>
+
+    <section>
+        <h2>Links</h2>
+        <p>Links allow you to navigate to other pages or websites  .it is used by<code>&lt; a href&gt;</code>tag when used to make a text a link . Here's an example:</p>
+        <p><a href="https://www.google.com" target="_blank">Go to Google</a></p>
+    </section>
+
+    <section>
+        <h2>Images</h2>
+        <p>Images can be displayed on your webpage using the <code>&lt;img&gt;</code> tag. Example:</p>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    </section>
+
+    <section>
+        <h2>Lists</h2>
+        <h3>Ordered List:         <code>&lt;ol&gt;</code> </h3>
+
+        <ol>
+            <li>Learn HTML</li>
+            <li>Practice CSS</li>
+            <li>Explore JavaScript</li>
+        </ol>
+
+        <h3>Unordered List:        <code>&lt;ul&gt;</code></h3>
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </section>
+    <section>
+
+       <center> <section  id="ending">
+            <p>More data uploding soon.........</p>
+        </section></center>
+
+
+    </section>
+    <footer>
+        <p>Happy Coding! &copy; 2024</p>
+    </footer>
+</body>
+</html>
